@@ -1,0 +1,58 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+ 39.98     26.68    26.68      524    50.92    50.92  ordres_
+ 37.42     51.65    24.97   314400     0.08     0.08  zfunr_
+ 12.69     60.12     8.47   314400     0.03     0.03  cfft_
+  3.04     62.15     2.03   314400     0.01     0.12  tunelasr_
+  2.35     63.72     1.57     1048     1.50    36.25  spectrum_
+  1.42     64.67     0.95   314400     0.00     0.00  calcr_
+  1.36     65.58     0.91                             cexp.J
+  0.24     65.74     0.16                             ____strtod_l_internal
+  0.22     65.89     0.15      526     0.29    87.30  main
+  0.19     66.02     0.13     1048     0.12    36.37  datspe_
+  0.13     66.11     0.09                             __kmp_get_global_thread_id_reg
+  0.09     66.17     0.06                             _int_malloc
+  0.07     66.22     0.05                             fgetc
+  0.07     66.27     0.05                             kmp_threadprivate_insert.
+  0.07     66.32     0.05                             memcpy
+  0.06     66.36     0.04                             __mpn_mul_1
+  0.06     66.40     0.04                             round_and_return
+  0.04     66.43     0.03                             __libm_sse2_sincos
+  0.04     66.46     0.03                             __printf_fp
+  0.03     66.48     0.02      524     0.04    87.33  sussix4drivenoise_
+  0.03     66.50     0.02                             __libm_sse2_log
+  0.03     66.52     0.02                             cexp
+  0.03     66.54     0.02                             for__acquire_lun.
+  0.03     66.56     0.02                             for_write_seq_lis_xmit
+  0.03     66.58     0.02                             pthread_mutex_lock
+  0.01     66.59     0.01     1048     0.01     0.01  BPMstatus
+  0.01     66.60     0.01                             __kmp_release_queuing_lock_with_checks(kmp_queuing_lock*, int)
+  0.01     66.61     0.01                             ___kmp_allocate
+  0.01     66.62     0.01                             __kmp_external_scalable_aligned_free
+  0.01     66.63     0.01                             __libm_sse2_atan2
+  0.01     66.64     0.01                             __moddi3
+  0.01     66.65     0.01                             __pthread_mutex_unlock_usercnt
+  0.01     66.66     0.01                             for__interp_fmt
+  0.01     66.67     0.01                             for__release_lun
+  0.01     66.68     0.01                             for_open
+  0.01     66.69     0.01                             for_write_seq_lis
+  0.01     66.70     0.01                             hack_digit.12413
+  0.01     66.71     0.01                             not1
+  0.01     66.72     0.01                             strtod
+  0.01     66.73     0.01                             vfprintf
+  0.00     66.73     0.00      300     0.00     0.00  containsString
+  0.00     66.73     0.00       28     0.00     0.00  assertSmaller
+  0.00     66.73     0.00       27     0.00     0.00  __getFileWithMode
+  0.00     66.73     0.00       26     0.00     0.00  setPath
+  0.00     66.73     0.00       24     0.00     0.00  getFileToWrite
+  0.00     66.73     0.00        4     0.00     0.00  canOpenFile
+  0.00     66.73     0.00        4     0.00     0.00  printTuneValue
+  0.00     66.73     0.00        3     0.00     0.00  getFileToRead
+  0.00     66.73     0.00        2     0.00     0.00  formatLinFile
+  0.00     66.73     0.00        2     0.00     0.00  getNextInt
+  0.00     66.73     0.00        2     0.00     0.00  readDrivingTerms
+  0.00     66.73     0.00        1     0.00     0.00  containsChar
+  0.00     66.73     0.00        1     0.00     0.00  writeSussixInput
