@@ -8,21 +8,21 @@ FFLAGS = -O3 -c -g -pg -m32 -openmp -diag-enable openmp -openmp-report1 -Bstatic
 FFLAGS = -O3 -c -m32 -openmp -Bstatic -static -static-libgcc -parallel -unroll -ipo -pg
 # -prof-use
 
-CCFLAGS = -ansi -g  -pg -c -m32 -static -static-libgcc
+CCFLAGS = -ansi -g  -pg -c -m32 -static -static-libgcc 
 CCFLAGS = -ansi -c -m32 -openmp -static-libgcc -parallel -unroll -ipo -Wall -Wremarks -diag-disable 981 -pg
 #,1419,2259
 
-FCL = -lm -g77libs -m32 -pg
-FCL = -lm -m32 -openmp -pg
-FCL = -lm -m32 -nofor_main -openmp -Bstatic -static-libgcc -static -parallel -unroll -ipo -pg
+FCL = -lm -g77libs -m32 -pg -lf2c
+FCL = -lm -m32 -openmp -pg -lf2c
+FCL = -lm -m32 -nofor_main -openmp -Bstatic -static-libgcc -static -parallel -unroll -ipo -pg -lf2c
 # -prof-use
 
 
 all: Drive_God_lin
 
 # make sussix object file from fortran source
-sussix4drivexxNoO.o: sussix4drivexxNoO.f Makefile
-	$(FC)  $(FFLAGS) -pg sussix4drivexxNoO.f
+sussix4drivexxNoO.o: sussix4drivexxNoO.c Makefile
+	$(CC)  $(FFLAGS) -pg sussix4drivexxNoO.c
 
 # make drive object file from c source
 Drive_God_lin.o: Drive_God_lin.c Makefile
@@ -30,11 +30,11 @@ Drive_God_lin.o: Drive_God_lin.c Makefile
 
 # link to binary
 Drive_God_lin:  Drive_God_lin.o  sussix4drivexxNoO.o   Makefile
-	$(FC) -o Drive_God_lin Drive_God_lin.o  sussix4drivexxNoO.o  -pg $(FCL)
+	$(CC) -o Drive_God_lin Drive_God_lin.o  sussix4drivexxNoO.o  -lf2c -lm -pg $(FCL)
 
 
 Drive_God_lin_dev:  Drive_God_lin_dev.o  sussix4drivexxNoO.o   Makefile
-	$(FC) -o Drive_God_lin_dev Drive_God_lin_dev.o  sussix4drivexxNoO.o   -pg $(FCL)
+	$(CC) -o Drive_God_lin_dev Drive_God_lin_dev.o  sussix4drivexxNoO.o  -lf2c -lm -pg $(FCL)
 
 Drive_God_lin_dev.o: Drive_God_lin_dev.c Makefile
 	$(CC)  $(CCFLAGS) -pg Drive_God_lin_dev.c
@@ -42,4 +42,3 @@ Drive_God_lin_dev.o: Drive_God_lin_dev.c Makefile
 
 clean:
 	rm -f *.o Drive_God_lin
-
