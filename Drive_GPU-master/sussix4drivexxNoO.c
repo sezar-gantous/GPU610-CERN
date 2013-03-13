@@ -366,8 +366,13 @@ static integer c__6 = 6;
 /* ========================= */
 /*     write(*,*)"Here comes the input file" */
     i__ = i_indx(path, "sussix_v4.inp", (ftnlen)4000, (ftnlen)13);
-/*     write(*,*) path(1:i+12), i */
-    tid = omp_get_thread_num__();
+/*     write(*,*) path(1:i+12), i */ 
+
+                                              
+    tid = 1; //omp_get_thread_num__();
+	
+	
+	
 /*     write(*,*) tid */
     itid = tid + 10;
 /* $OMP CRITICAL */
